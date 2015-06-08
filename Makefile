@@ -16,8 +16,8 @@ libtemper1/lib/libtemper1.a: libtemper1
 	cd libtemper1 && make
 	
 obj/main.o: src/main.c
-	$(CC) $(CFLAGS) -DPROGN=\"$(PROGN)\" -c -o $@ $<
+	$(CC) $(CFLAGS) -I libtemper1/include -DPROGN=\"$(PROGN)\" -c -o $@ $<
 
 
 clean:
-	rm -f bin/$(PROGN) obj/*.o
+	rm -f bin/$(PROGN) obj/*.o libtemper1/lib/libtemper1.a

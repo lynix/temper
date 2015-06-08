@@ -10,7 +10,7 @@
 #include <stdarg.h>
 #include <stdbool.h>
 
-#include "../../libtemper1/include/libtemper1.h"
+#include <libtemper1.h>
 
 
 void err_exit(const char *format, ...);
@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
 	double temp = temper1_read(&err);
 	if (err != NULL)
 		err_exit("%s", err);
+	temper1_exit();
 
 	printf("%.1f\n", temp);
 
